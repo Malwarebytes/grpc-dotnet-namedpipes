@@ -142,7 +142,16 @@ namespace GrpcDotNetNamedPipes.Internal
         {
             try
             {
-                pipeServer.WaitForConnectionAsync(_cts.Token).Wait();
+                if (_cts.IsCancellationRequested)
+                {
+                    return;
+                }
+ 
+                if (!pipeServer.IsAsync) {
+                    Task.Factory.StartNew(_ => { pipeServer.WaitForConnection(); }, _cts.Token).Wait();
+                }
+ 
+                Task.Factory.FromAsync(pipeServer.BeginWaitForConnection, pipeServer.EndWaitForConnection, null).Wait();
             }
             catch (Exception)
             {

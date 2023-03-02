@@ -64,7 +64,7 @@ namespace GrpcDotNetNamedPipes
         protected override Task WriteResponseHeadersAsyncCore(Metadata responseHeaders)
         {
             _ctx.Transport.Write().Headers(responseHeaders).Commit();
-            return Task.CompletedTask;
+            return Task2.CompletedTask;
         }
 
         protected override ContextPropagationToken CreatePropagationTokenCore(ContextPropagationOptions options) =>

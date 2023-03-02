@@ -32,7 +32,7 @@ namespace GrpcDotNetNamedPipes.Internal
         private readonly int _connectionTimeout;
 
         private readonly TaskCompletionSource<Metadata> _responseHeadersTcs =
-            new TaskCompletionSource<Metadata>(TaskCreationOptions.RunContinuationsAsynchronously);
+            new TaskCompletionSource<Metadata>((TaskCreationOptions)0x40);
 
         private CancellationTokenRegistration _cancelReg;
         private byte[] _pendingPayload;

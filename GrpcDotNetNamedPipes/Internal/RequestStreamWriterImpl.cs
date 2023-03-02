@@ -43,7 +43,7 @@ namespace GrpcDotNetNamedPipes.Internal
         {
             Stream.Write().RequestStreamEnd().Commit();
             _isCompleted = true;
-            return Task.CompletedTask;
+            return Task2.CompletedTask;
         }
     }
 }

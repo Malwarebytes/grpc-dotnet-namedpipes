@@ -103,7 +103,7 @@ namespace GrpcDotNetNamedPipes.Internal
 
                 if (cancellationToken.IsCancellationRequested)
                 {
-                    return Task.FromCanceled<bool>(cancellationToken);
+                    return Task2<bool>.FromCanceled(cancellationToken);
                 }
 
                 if (_internalQueue.Count > 0)
@@ -122,7 +122,7 @@ namespace GrpcDotNetNamedPipes.Internal
                     return Task.FromResult(false);
                 }
 
-                _tcs = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
+                _tcs = new TaskCompletionSource<bool>((TaskCreationOptions)0x40);
                 var task = _tcs.Task;
                 _cancelReg = cancellationToken.Register(SetCanceled);
                 return task;

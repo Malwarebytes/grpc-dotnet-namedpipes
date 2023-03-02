@@ -40,12 +40,12 @@ namespace GrpcDotNetNamedPipes.Internal
         {
             if (_cancellationToken.IsCancellationRequested)
             {
-                return Task.FromCanceled(_cancellationToken);
+                return Task2.FromCanceled(_cancellationToken);
             }
 
             var payload = SerializationHelpers.Serialize(_marshaller, message);
             Stream.Write().Payload(payload).Commit();
-            return Task.CompletedTask;
+            return Task2.CompletedTask;
         }
     }
 }
