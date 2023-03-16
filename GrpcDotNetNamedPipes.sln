@@ -1,10 +1,24 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrpcDotNetNamedPipes", "GrpcDotNetNamedPipes\GrpcDotNetNamedPipes.csproj", "{5BB6ABD5-4B0C-4EB8-AE7A-6196107FA612}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33502.453
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrpcDotNetNamedPipes", "GrpcDotNetNamedPipes\GrpcDotNetNamedPipes.csproj", "{5BB6ABD5-4B0C-4EB8-AE7A-6196107FA612}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrpcDotNetNamedPipes.Tests", "GrpcDotNetNamedPipes.Tests\GrpcDotNetNamedPipes.Tests.csproj", "{D7566E69-DA28-4997-9C4F-E0C0F8DD3F13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrpcDotNetNamedPipes.Tests", "GrpcDotNetNamedPipes.Tests\GrpcDotNetNamedPipes.Tests.csproj", "{D7566E69-DA28-4997-9C4F-E0C0F8DD3F13}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrpcDotNetNamedPipes.PerfTests", "GrpcDotNetNamedPipes.PerfTests\GrpcDotNetNamedPipes.PerfTests.csproj", "{688ADBBA-FEDD-48C4-A05C-BB1E1BF8DB84}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DemoApps", "DemoApps", "{D7FDCEC4-4DC0-4822-8978-4BFAFCDEA3C1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Protos", "Protos", "{8BAA2793-359E-494E-9008-6E71D033CFA3}"
+	ProjectSection(SolutionItems) = preProject
+		DemoApps\Protos\Downloader.proto = DemoApps\Protos\Downloader.proto
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "DemoApps\Server\Server.csproj", "{8CD368D2-CA79-43F8-8E23-88FE705F4CAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "DemoApps\Client\Client.csproj", "{EAB3E484-42A8-44D3-871E-84733D7D7A77}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +38,24 @@ Global
 		{688ADBBA-FEDD-48C4-A05C-BB1E1BF8DB84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{688ADBBA-FEDD-48C4-A05C-BB1E1BF8DB84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{688ADBBA-FEDD-48C4-A05C-BB1E1BF8DB84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CD368D2-CA79-43F8-8E23-88FE705F4CAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CD368D2-CA79-43F8-8E23-88FE705F4CAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CD368D2-CA79-43F8-8E23-88FE705F4CAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CD368D2-CA79-43F8-8E23-88FE705F4CAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAB3E484-42A8-44D3-871E-84733D7D7A77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAB3E484-42A8-44D3-871E-84733D7D7A77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAB3E484-42A8-44D3-871E-84733D7D7A77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAB3E484-42A8-44D3-871E-84733D7D7A77}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8BAA2793-359E-494E-9008-6E71D033CFA3} = {D7FDCEC4-4DC0-4822-8978-4BFAFCDEA3C1}
+		{8CD368D2-CA79-43F8-8E23-88FE705F4CAC} = {D7FDCEC4-4DC0-4822-8978-4BFAFCDEA3C1}
+		{EAB3E484-42A8-44D3-871E-84733D7D7A77} = {D7FDCEC4-4DC0-4822-8978-4BFAFCDEA3C1}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EBB9752B-7711-4E4E-912C-D10A8F5A6607}
 	EndGlobalSection
 EndGlobal

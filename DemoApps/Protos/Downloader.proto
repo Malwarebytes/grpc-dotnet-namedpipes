@@ -1,0 +1,17 @@
+syntax = "proto3";
+package eadomain;
+option csharp_namespace = "EADomain";
+
+service Downloader {
+  rpc DownloadFile (DownloadRequest) returns (DownloadReply);
+}
+
+message DownloadRequest {
+  string url = 1;
+  bool auto_redirect = 2;
+}
+
+message DownloadReply {
+  int32 http_status = 1;
+  string file_path = 2;
+}
