@@ -47,16 +47,21 @@ namespace Server
             return new Empty();
         }
 
-        //public override Task<DownloadReply> DownloadFile(DownloadRequest request, ServerCallContext context)
-        //{
-        //    Console.WriteLine("DownloadFile() called in the server.");
+        public override async Task<Empty> Function1(MyMessage request, ServerCallContext context)
+        {
+            Console.WriteLine($"Function1 called with {request.Duration}ms delay.");
+            await Task.Delay(request.Duration);
 
-        //    //_logger.LogInformation("Saying hello to {Name}", request.Name);
-        //    return Task.FromResult(new DownloadReply 
-        //    {
-        //        HttpStatus = 200,
-        //        FilePath = "foo"
-        //    });
-        //}
+            return new Empty();
+        }
+
+        public override async Task<Empty> Function2(MyMessage request, ServerCallContext context)
+        {
+            Console.WriteLine($"Function2 called with {request.Duration}ms delay.");
+
+            await Task.Delay(request.Duration);
+
+            return new Empty();
+        }
     }
 }

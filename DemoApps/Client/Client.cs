@@ -2,6 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 using EADomain;
+using Google.Protobuf.WellKnownTypes;
 using GrpcDotNetNamedPipes;
 
 namespace Client
@@ -12,6 +13,7 @@ namespace Client
 
         static void Main(string[] args)
         {
+            //Local event pump so even a console app can have a synchronization context
             AsyncPump.Run(AsyncMain);
         }
 
@@ -35,6 +37,21 @@ namespace Client
                 };
                 
                 await engine.NotifyPluginConnectedAsync(clientPipe);
+
+                //Call more than one engine function in parallel.
+                //Also test reentrancy when calling the same function from separate threads
+                var message = new MyMessage();
+
+
+                message.Duration = 5000;
+                var task1 = engine.Function1Async(message).ResponseAsync;
+                message.Duration = 2000;
+                var task2 = engine.Function2Async(message).ResponseAsync;
+                message.Duration = 1000;
+                var task3 = engine.Function1Async(message).ResponseAsync;
+
+                Console.WriteLine("Waiting for all tasks to finish...");
+                Task.WaitAll(task1, task2, task3);
 
                 Console.WriteLine("Press key to exit client...");
                 Console.ReadKey();
