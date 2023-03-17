@@ -2,8 +2,6 @@ syntax = "proto3";
 
 package eadomain;
 
-//import "google/protobuf/empty.proto";
-
 option csharp_namespace = "EADomain";
 
 service IPlugin {

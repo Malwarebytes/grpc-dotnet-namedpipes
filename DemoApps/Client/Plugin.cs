@@ -10,9 +10,10 @@ namespace Client
 {
     internal class Plugin : IPlugin.IPluginBase
     {
-        public override Task<PluginInitialization> Initialize(PluginPolicy policy, ServerCallContext context)
+        public override Task<PluginInitialization> Initialize(PluginPolicy pluginPolicy, ServerCallContext context)
         {
-            Console.WriteLine("DownloadFile() called in the server.");
+            Console.WriteLine("Plugin initialized. Policy:");
+            Console.WriteLine(pluginPolicy.Policy);
 
             //_logger.LogInformation("Saying hello to {Name}", request.Name);
             return Task.FromResult(new PluginInitialization 
