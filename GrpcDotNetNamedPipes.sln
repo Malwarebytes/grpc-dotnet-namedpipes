@@ -13,12 +13,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DemoApps", "DemoApps", "{D7
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Protos", "Protos", "{8BAA2793-359E-494E-9008-6E71D033CFA3}"
 	ProjectSection(SolutionItems) = preProject
-		DemoApps\Protos\Downloader.proto = DemoApps\Protos\Downloader.proto
+		DemoApps\Protos\IPlugin.proto = DemoApps\Protos\IPlugin.proto
+		DemoApps\Protos\IEAEngine.proto = DemoApps\Protos\IEAEngine.proto
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "DemoApps\Server\Server.csproj", "{8CD368D2-CA79-43F8-8E23-88FE705F4CAC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server", "DemoApps\Server\Server.csproj", "{8CD368D2-CA79-43F8-8E23-88FE705F4CAC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "DemoApps\Client\Client.csproj", "{EAB3E484-42A8-44D3-871E-84733D7D7A77}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client", "DemoApps\Client\Client.csproj", "{EAB3E484-42A8-44D3-871E-84733D7D7A77}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

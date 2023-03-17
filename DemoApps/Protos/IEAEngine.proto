@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package eadomain;
+
+//import "google/protobuf/empty.proto";
+
+option csharp_namespace = "EADomain";
+
+service IEAEngine {
+    rpc NotifyPluginConnected(ClientPipe) returns (ClientNotify);
+}
+
+message ClientPipe {
+    string pipe_name = 1;
+}
+
+message ClientNotify {
+    string empty = 1;
+}

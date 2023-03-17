@@ -10,9 +10,9 @@ namespace Server
         {
             using (var server = new NamedPipeServer("Malwarebytes.PipeServerName"))
             {
-                Downloader.BindService(server.ServiceBinder, new DownloaderService());
+                IEAEngine.BindService(server.ServiceBinder, new Engine());
                 server.Start();
-                Console.WriteLine("Press key to exit server...");
+                Console.WriteLine("Waiting for connection. Press key to exit server...");
                 Console.ReadKey();
             }
         }

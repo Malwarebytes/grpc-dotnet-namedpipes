@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package eadomain;
+
+//import "google/protobuf/empty.proto";
+
+option csharp_namespace = "EADomain";
+
+service IPlugin {
+  rpc Initialize (PluginPolicy) returns (PluginInitialization);
+}
+
+message PluginPolicy {
+  string policy = 1;
+}
+
+message PluginInitialization {
+  repeated string supported_commands = 1;
+}
